@@ -1,0 +1,43 @@
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>pokedex 3?!??!?!??!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">    
+    </head>
+</head>
+
+<body>
+    <h1>display all legendary pokemons of specific type1 and type2</h1>
+    <p>what types of legendary pokemon are you finding?</p>
+    <div>
+        <form method="post" action="/legendary">
+            <label for="type1">type 1: </label>
+            <input type="text" name="type1">
+            <br>
+            <label for="type2">type 2: </label>
+            <input type="text" name="type2">
+            <br>
+            <input type="submit" class="button" value="Submit">
+        </form>
+    </div>
+    <p>{{ no_such_pokemon }}</p>
+    <table>
+        <!-- column headers from list of headers -->
+        {% for column in headers %}
+            <th>{{ column }}</th>
+        {% endfor %}
+        <!-- display pokemon -->
+        {% if display %}
+            {% for pokemon in display %}
+                <tr>
+                    {% for item in pokemon %}
+                        <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+    <h1 style="font-size: 24; margin: 15px;"><a href="{{ url_for('home')}}">back to home</a></h1>
+</body>

@@ -1,0 +1,46 @@
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>pokedex 3?!??!?!??!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">    
+    </head>
+</head>
+
+<body>
+    <h1>display all pokemons with a minimum set of stats</h1>
+    <p>enter the minimum stats:</p>
+    <div>
+        <form method="post" action="/min_specific">
+            <label for="attack">attack: </label>
+            <input type="number" name="attack" min="1">
+            <br>
+            <label for="defense">defense: </label>
+            <input type="number" name="defense" min="1">
+            <br>
+            <label for="speed">speed: </label>
+            <input type="number" name="speed" min="1">
+            <br>
+            <input type="submit" class="button" value="Submit">
+        </form>
+    </div>
+    <p>{{ no_such_pokemon }}</p>
+    <table>
+        <!-- column headers from list of headers -->
+        {% for column in headers %}
+            <th>{{ column }}</th>
+        {% endfor %}
+        <!-- display pokemon -->
+        {% if display %}
+            {% for pokemon in display %}
+                <tr>
+                    {% for item in pokemon %}
+                        <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+    <h1 style="font-size: 24; margin: 15px;"><a href="{{ url_for('home')}}">back to home</a></h1>
+</body>

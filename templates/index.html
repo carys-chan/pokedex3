@@ -1,0 +1,46 @@
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>pokedex 3?!??!?!??!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">    
+    </head>
+</head>
+
+<body>
+    <h1>pokedex</h1>
+    <h1 style="font-size: 36;">pokemon super search engine</h1>
+    <p>(why have i made this 3 times wdym pokedex 3)</p>
+    <p style="font-size: 42; font-weight: bold;">welcome!!! what would you like to do today?</p>
+    <div class ="menu">
+        <div class="menubutton">
+            <a href="{{ url_for('display')}}">display pokemon with their types and statistics</a>
+        </div>
+        <div class="menubutton">
+            <a href="{{ url_for('type')}}">display the first pokemon of a type of your choice</a>
+        </div>
+        <div class="menubutton">
+            <a href="{{ url_for('total_base')}}">display all pokemons with total base stat of your choice</a>
+        </div>
+        <div class="menubutton">
+            <a href="{{ url_for('min_specific')}}">display all pokemons with a minimum set of stats</a>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="menubutton">
+            <a href="{{ url_for('legendary')}}">display all lengendary pokemons of specific type1 and type2</a>
+        </div>
+        <div class="menubutton">
+            <a href="{{ url_for('new')}}">insert a new pokemon into the database</a>
+        </div>
+        <div class="menubutton">
+            <a href="{{ url_for('display_by_hp')}}">display count of each type1 based on minimum hp</a>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="menubutton" style="height: auto; font-size: 38;">
+            <a href="{{ url_for('surprise_me')}}">SURPRISE ME???</a>
+        </div>
+    </div>
+</body>

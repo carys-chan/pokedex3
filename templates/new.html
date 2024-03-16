@@ -1,0 +1,60 @@
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>pokedex 3?!??!?!??!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">    
+    </head>
+</head>
+
+<body>
+    <h1>insert a new pokemon into the database</h1>
+    <p>{{ added }}</p>
+    <p>insert all statistics of this new pokemon</p>
+    <div>
+        <form method="post" action="/new">
+            <label for="no">no: </label>
+            <input type="number" name="no" value="{{next}}" readonly>
+            <br>
+            <label for="name">name: </label>
+            <input type="text" name="name">
+            <br>
+            <label for="type1">type 1: </label>
+            <input type="text" name="type1">
+            <br>
+            <label for="type2">type 2: </label>
+            <input type="text" name="type2">
+            <br>
+            <label for="total">total: </label>
+            <input type="number" name="total">
+            <br>
+            <label for="hp">hp: </label>
+            <input type="number" name="hp">
+            <br>
+            <label for="attack">attack: </label>
+            <input type="number" name="attack">
+            <br>
+            <label for="defense">defense: </label>
+            <input type="number" name="defense">
+            <br>
+            <label for="sp_atk">special attack: </label>
+            <input type="number" name="sp_atk">
+            <br>
+            <label for="sp_def">special defense: </label>
+            <input type="number" name="sp_def">
+            <br>
+            <label for="speed">speed: </label>
+            <input type="number" name="speed">
+            <br>
+            <label for="generation">generation: </label>
+            <input type="number" name="generation">
+            <br>
+            <label for="legendary">legendary (TRUE/FALSE): </label>
+            <input type="text" name="legendary">
+            <br>
+            <input type="submit" class="button" value="Submit">
+        </form>
+    </div>
+    <h1 style="font-size: 24; margin: 15px;"><a href="{{ url_for('home')}}">back to home</a></h1>
+</body>

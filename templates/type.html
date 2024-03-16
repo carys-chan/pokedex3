@@ -1,0 +1,39 @@
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>pokedex 3?!??!?!??!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">    
+    </head>
+</head>
+
+<body>
+    <h1>display the first pokemon of a type of your choice</h1>
+    <p>what type of pokemon do you want to display?</p>
+    <p>available types: bug, dark, dragon, electric, fairy, fighting, fire, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water</p>
+    <div>
+        <form method="post" action="/type">
+            <label for="t"></label>
+            <input type="text" id="t" name="type">
+            <br>
+            <input type="submit" class="button" value="Submit">
+        </form>
+    </div>
+    <p>{{ no_such_pokemon }}</p>
+    <table>
+        <!-- column headers from list of headers -->
+        {% for column in headers %}
+            <th>{{ column }}</th>
+        {% endfor %}
+        <!-- display pokemon -->
+        {% if display %}
+        <tr>
+            {% for item in display %}
+                <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endif %}
+    </table>
+    <h1 style="font-size: 24; margin: 15px;"><a href="{{ url_for('home')}}">back to home</a></h1>
+</body>

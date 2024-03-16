@@ -1,0 +1,19 @@
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>pokedex 3?!??!?!??!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">    
+    </head>
+</head>
+
+<body style="vertical-align: middle;">
+    <h1><a href="{{ url_for('such_surprise')}}">click here to be surprised!!</a></h1>
+    <div style = "display: {% if surprise %} block {% else %} none {% endif %};">
+        <img src="{{ url_for('static', filename='very-surprising.gif') }}">
+        <p>are you surprised?!?!?!?!?!</p>
+        <p>(like me when i saw pokedex 3 fr)</p>
+    </div>
+    <h1 style="font-size: 24; margin: 15px;"><a href="{{ url_for('home')}}">back to home</a></h1>
+</body>
